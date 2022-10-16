@@ -18,11 +18,11 @@
 - has_many :products
 - has_many :purchases
 
-## products テーブル
+## items テーブル
 
 | Column             | Type       | Options                        |
 | ------------------ | ---------- | ------------------------------ |
-| product_name       | string     | null: false                    |
+| item_name          | string     | null: false                    |
 | comment            | text       | null: false                    |
 | price              | integer    | null: false                    |
 | category_id        | integer    | null: false                    |
