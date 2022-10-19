@@ -13,8 +13,7 @@ class ItemsController < ApplicationController
       render json: {price: item}
       redirect_to root_path
     else
-      @item = Item.new(item_params)
-      render "items/new"
+      render :new
     end
   end
 
