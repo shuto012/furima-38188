@@ -1,7 +1,6 @@
 class ItemsController < ApplicationController
 
   def index
-    @item = Item.all
   end
 
   def new
@@ -11,6 +10,7 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     if @item.save
+      render json: {price: item}
       redirect_to root_path
     else
       @item = Item.new(item_params)
