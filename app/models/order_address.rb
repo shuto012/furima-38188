@@ -13,7 +13,6 @@ class OrderAddress
     validates :order_id
     validates :address_id
   end
-  validates :building_name
 
   def save
     order = Order.create(item_id: item_id, user_id: user_id)
