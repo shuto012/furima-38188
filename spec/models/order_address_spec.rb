@@ -15,7 +15,7 @@ RSpec.describe OrderAddress, type: :model do
         expect(@order_address).to be_valid
       end
       it 'item_idが空でなければ保存できる' do
-        @order_address.item_id = 1
+        @order_address.item_id = 3
         expect(@order_address).to be_valid
       end
       it 'post_codeが「3桁ハイフン4桁」の組み合わせであれば保存できる' do
