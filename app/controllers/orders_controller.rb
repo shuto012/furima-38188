@@ -1,6 +1,6 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!
-  before_action :purchase_item, only:[:index, :create]
+  before_action :purchased_item, only:[:index, :create]
 
   def index
     @order_address = OrderAddress.new
@@ -32,7 +32,10 @@ class OrdersController < ApplicationController
     )
   end
 
-  def purchase_item
+  def purchased_item
     @item = Item.find(params[:item_id])
+    if (@item.user_id != current_user.id) || (@item.order.present?)
+      redirect_to action: :index
   end
+
 end
